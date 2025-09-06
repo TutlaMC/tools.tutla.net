@@ -2,10 +2,10 @@ import type { NextConfig } from "next";
 
 const nextConfig = {
   typescript: {
-    ignoreBuildErrors: true, // ⬅️ disables type errors in build
+    ignoreBuildErrors: true,
   },
   eslint: {
-    ignoreDuringBuilds: true, // ⬅️ disables lint during build
+    ignoreDuringBuilds: true,
   },
 };
 
