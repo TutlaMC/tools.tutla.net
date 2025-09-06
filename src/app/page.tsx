@@ -43,7 +43,7 @@ export default function Home() {
         onClick={handleGenerate}
         className="px-4 py-2 bg-blue-600 rounded hover:bg-blue-700 mb-4"
       >
-        Generate it
+        Generate
       </button>
 
       {previewUrl && (

@@ -22,7 +22,7 @@ export async function GET(req: NextRequest) {
         .avatar { width:40px; height:40px; border-radius:50%; margin-right:12px; }
         .content { display:flex; flex-direction:column; margin-top:-2px; }
         .header { display:flex; align-items:baseline; margin-bottom:2px; }
-        .username { color:${color}; font-weight:600; font-size:16px; margin-right:6px; }
+        .username { color:${color};  font-size:16px; margin-right:6px; }
         .timestamp { font-size:12px; color:#a3a6aa; }
         .text { font-size:16px; color:#dbdee1; white-space:pre-wrap; }
       </style>
