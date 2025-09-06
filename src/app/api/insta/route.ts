@@ -32,7 +32,7 @@ export async function GET(req: NextRequest) {
   `;
 
   const browser = await puppeteer.launch({
-    headless: "new" as any,
+    headless: "new" as unknown as boolean | "shell" | undefined,
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
   const page = await browser.newPage();

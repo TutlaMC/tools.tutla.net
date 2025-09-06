@@ -1,7 +1,7 @@
 import { NextRequest } from "next/server";
 import puppeteer from "puppeteer";
-
 export async function GET(req: NextRequest) {
+  
   const { searchParams } = new URL(req.url);
 
   const name = searchParams.get("name") || "User";
@@ -40,8 +40,8 @@ export async function GET(req: NextRequest) {
   `;
 
   const browser = await puppeteer.launch({
-  headless: "new" as any,
-  args: ["--no-sandbox", "--disable-setuid-sandbox"],
+    headless: "new" as unknown as boolean | "shell" | undefined,
+    args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
 
   const page = await browser.newPage();
