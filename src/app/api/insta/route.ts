@@ -35,12 +35,10 @@ export async function GET(req: NextRequest) {
     headless: "new" as unknown as boolean | "shell" | undefined,
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
+
   const page = await browser.newPage();
   await page.setContent(html, { waitUntil: "networkidle0" });
   const buffer = await page.screenshot({ type: "png" });
   await browser.close();
-
-  return new Response(buffer, {
-    headers: { "Content-Type": "image/png" },
-  });
+  return new Response(new Blob([buffer], { type: "image/png" }));
 }

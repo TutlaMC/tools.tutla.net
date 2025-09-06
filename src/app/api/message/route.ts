@@ -48,8 +48,6 @@ export async function GET(req: NextRequest) {
   await page.setContent(html, { waitUntil: "networkidle0" });
   const buffer = await page.screenshot({ type: "png" });
   await browser.close();
+  return new Response(new Blob([buffer], { type: "image/png" }));
 
-  return new Response(buffer, {
-    headers: { "Content-Type": "image/png" },
-  });
 }
