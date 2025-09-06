@@ -43,7 +43,7 @@ export async function GET(req: NextRequest) {
   `;
 
   const browser = await puppeteer.launch({
-    headless: "new" as unknown as boolean | "shell" | undefined,
+    headless: true,
     args: ["--no-sandbox", "--disable-setuid-sandbox"],
   });
 
